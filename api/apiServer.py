@@ -59,7 +59,8 @@ class WebRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                 # print type(result)
                 # for r in  result:
                 #     print r
-                data = [{'ip':item[0], 'port': item[1]} for item in result]
+                print result
+                data = [{'ip':item[0], 'port': item[1], 'area':item[2]} for item in result]
                 data = json.dumps(data)
                 self.send_response(200)
                 self.end_headers()
