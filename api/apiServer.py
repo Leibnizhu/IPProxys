@@ -48,13 +48,14 @@ class WebRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                     if key =='count':
                         str_count = 'LIMIT 0,%s'% dict[key]
                     if key =='country' or key =='area':
-                        conditions .append(key+" LIKE '"+dict[key]+"%'")
-                    elif key =='types' or key =='protocol' or key =='country' or key =='area':
+                        conditions .append(key+" LIKE '%"+dict[key]+"%' ")
+                    elif key =='types' or key =='protocol':
                         conditions .append(key+"="+dict[key])
                 if len(conditions)>1:
                     conditions = ' AND '.join(conditions)
                 else:
                     conditions =conditions[0]
+                print conditions
                 result = sqlHelper.select(sqlHelper.tableName,conditions,str_count)
                 # print type(result)
                 # for r in  result:

@@ -38,7 +38,7 @@ class SqliteHelper(SqlHelper):
         :param value:  占位符所对应的值(主要是为了防注入)
         :return:
         '''
-        command = 'SELECT DISTINCT ip,port FROM %s WHERE %s ORDER BY speed ASC %s '%(tableName,condition,count)
+        command = 'SELECT DISTINCT ip,port,area FROM %s WHERE %s ORDER BY speed ASC %s '%(tableName,condition,count)
 
         self.cursor.execute(command)
         result = self.cursor.fetchall()
