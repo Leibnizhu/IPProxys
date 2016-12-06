@@ -12,6 +12,18 @@ ip，端口，类型(0高匿名，1透明)，protocol(0 http,1 https),country(�
 '''
 parserList = [
         {
+            'urls': ['http://proxy.mimvp.com/api/fetch.php?orderid=860161130165132255&num=200&country_group=1&http_type=1&anonymous=3,5&isp=5&result_fields=1,2'],
+            'type':'regular',
+            'pattern': "(.+):(.+),(.+)",
+            'postion':{'ip': 0, 'port': 1, 'type': '', 'protocol': 2}
+        },
+        {
+            'urls': ['http://dev.kuaidaili.com/api/getproxy/?orderid=998064523409040&num=2000&area=%E4%B8%AD%E5%9B%BD&carrier=2&protocol=1&method=1&an_an=1&an_ha=1&f_pr=1&quality=1&sep=2'],
+            'type':'regular',
+            'pattern': "(.+):(.+),(.+)",
+            'postion':{'ip': 0, 'port': 1, 'type': '', 'protocol': 2}
+        },
+        {
             'urls': ['http://m.66ip.cn/%s.html'% n for n in ['index']+range(2,12)],
             'type':'xpath',
             'pattern': ".//*[@class='profit-c']/table/tr[position()>1]",
