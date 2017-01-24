@@ -1,1 +1,1 @@
-python IPProxys.py
+py -2 IPProxy.py

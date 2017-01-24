@@ -88,4 +88,6 @@ ENV/
 # Rope project settings
 .ropeproject
 .idea/
+*.db
 *.iml
+db/SQLiteHelper.py
